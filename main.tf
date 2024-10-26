@@ -17,6 +17,7 @@ resource "google_compute_firewall" "enable-vpc-auto-fw" {
     protocol = "tcp"
     ports    = ["22"]
   }
+  source_tags = ["web"]
 }
 
 resource "google_compute_network" "vpc-custom" {
@@ -39,6 +40,7 @@ resource "google_compute_firewall" "enable-vpc-custom-fw" {
     protocol = "tcp"
     ports    = ["22"]
   }
+  source_tags = ["web"]
 }
 
 resource "google_compute_instance" "default" {
