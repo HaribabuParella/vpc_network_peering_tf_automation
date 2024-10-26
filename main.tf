@@ -7,7 +7,7 @@ resource "google_compute_network" "vpc-auto" {
   name                    = "vpc-network-auto"
   auto_create_subnetworks = true
 }
-resource "google_compute_firewall" "enable-vpc-custom-fw" {
+resource "google_compute_firewall" "enable-vpc-auto-fw" {
   name    = "test-firewall"
   network = google_compute_network.vpc-auto.name
   allow {
