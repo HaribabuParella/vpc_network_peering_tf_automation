@@ -8,7 +8,7 @@ resource "google_compute_network" "vpc-auto" {
   auto_create_subnetworks = true
 }
 resource "google_compute_firewall" "enable-vpc-auto-fw" {
-  name    = "test-firewall"
+  name    = "test-firewall-auto"
   network = google_compute_network.vpc-auto.name
   allow {
     protocol = "icmp"
@@ -30,7 +30,7 @@ resource "google_compute_subnetwork" "vpc-custom-subnet" {
   network       = google_compute_network.vpc-custom.name
 }
 resource "google_compute_firewall" "enable-vpc-custom-fw" {
-  name    = "test-firewall"
+  name    = "test-firewall-custom"
   network = google_compute_network.vpc-custom.name
   allow {
     protocol = "icmp"
