@@ -133,5 +133,26 @@ resource "google_compute_instance" "default" {
     }
   }
 }
+resource "google_compute_network_peering" "vpc-auto-custom" {
+  name         = "vpc-auto-custom"
+  network      = google_compute_network.vpc-auto.self_link
+  peer_network = google_compute_network.vpc-custom.self_link
+}
 
+resource "google_compute_network_peering" "vpc-custom-auto" {
+  name         = "vpc-custom-auto"
+  network      = google_compute_network.vpc-custom.self_link
+  peer_network = google_compute_network.vpc-auto.self_link
+}
 
+resource "google_compute_network_peering" "custom-vpc-custom" {
+  name         = "custom-vpc-custom"
+  network      = google_compute_network.vpc-custom.self_link
+  peer_network = google_compute_network.vpc1-custom.self_link
+}
+
+resource "google_compute_network_peering" "custom-vpc1-custom" {
+  name         = "custom-vpc1-custom"
+  network      = google_compute_network.vpc1-custom.self_link
+  peer_network = google_compute_network.vpc-custom.self_link
+}
