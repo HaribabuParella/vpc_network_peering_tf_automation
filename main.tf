@@ -21,7 +21,7 @@ resource "google_compute_firewall" "enable-vpc-auto-fw" {
 }
 
 resource "google_compute_network" "vpc-custom" {
-  name                    = "vpc-network"
+  name                    = "vpc-custom"
   auto_create_subnetworks = false
 }
 resource "google_compute_subnetwork" "vpc-custom-subnet" {
@@ -44,7 +44,7 @@ resource "google_compute_firewall" "enable-vpc-custom-fw" {
 }
 
 resource "google_compute_network" "vpc1-custom" {
-  name                    = "vpc-network"
+  name                    = "vpc1-custom"
   auto_create_subnetworks = false
 }
 resource "google_compute_subnetwork" "vpc1-custom-subnet" {
