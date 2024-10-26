@@ -66,7 +66,7 @@ resource "google_compute_firewall" "enable-vpc1-custom-fw" {
   source_tags = ["web"]
 }
 
-resource "google_compute_instance" "default" {
+resource "google_compute_instance" "instance-vpc-auto" {
   name         = "instance-vpc-auto"
   machine_type = "e2-medium"
   zone        = "us-central1-f"
@@ -89,7 +89,7 @@ resource "google_compute_instance" "default" {
   }
 }
 
-resource "google_compute_instance" "default" {
+resource "google_compute_instance" "instance-vpc-custom" {
   name         = "instance-vpc-custom"
   machine_type = "e2-medium"
   zone        = "us-central1-f"
@@ -111,7 +111,7 @@ resource "google_compute_instance" "default" {
     }
   }
 }
-resource "google_compute_instance" "default" {
+resource "google_compute_instance" "instance-vpc1-custom" {
   name         = "instance-vpc1-custom"
   machine_type = "e2-medium"
   zone        = "us-central1-f"
